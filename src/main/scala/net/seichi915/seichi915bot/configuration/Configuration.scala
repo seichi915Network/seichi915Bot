@@ -46,6 +46,7 @@ object Configuration {
         false
     }
 
+  // TODO: 強引すぎる
   def get[T: ClassTag](path: String*): Option[T] = {
     if (!load) throw new IOException("Failed to load config.yml.")
     if (path.isEmpty) return None
