@@ -7,7 +7,7 @@ import net.seichi915.seichi915bot.command._
 import net.seichi915.seichi915bot.configuration.Configuration
 import net.seichi915.seichi915bot.listener._
 
-import java.util.logging.Logger
+import java.util.logging.{FileHandler, Level, Logger, SimpleFormatter}
 import javax.security.auth.login.LoginException
 
 object Seichi915Bot {
@@ -21,6 +21,10 @@ object Seichi915Bot {
     System.setProperty(
       "java.util.logging.SimpleFormatter.format",
       "[%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS.%1$tL] %4$s %2$s %5$s%6$s%n")
+    val fileHandler = new FileHandler("bot.log", true)
+    fileHandler.setFormatter(new SimpleFormatter)
+    getLogger.addHandler(fileHandler)
+    getLogger.setLevel(Level.ALL)
     if (!Configuration.saveDefaultConfig) {
       getLogger.severe("デフォルトのconfig.ymlファイルをコピーできませんでした。Botを停止します。")
       sys.exit(1)
@@ -51,8 +55,7 @@ object Seichi915Bot {
       getLogger.info("ログインに成功しました。")
     } catch {
       case e: LoginException =>
-        e.printStackTrace()
-        getLogger.severe("ログインに失敗しました。Botを停止します。")
+        getLogger.log(Level.SEVERE, "ログインに失敗しました。Botを停止します。", e)
         sys.exit(1)
     }
   }
