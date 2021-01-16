@@ -1,0 +1,2 @@
+# seichi915Bot
+seichi915DiscordにいるDiscordBot
