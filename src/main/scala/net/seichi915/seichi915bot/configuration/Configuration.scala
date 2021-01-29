@@ -117,4 +117,17 @@ object Configuration {
 
   def getRoleBotRoleId(number: Int): Long =
     getLong("RoleBotRoleId", number.toString).getOrElse(0)
+
+  def getDatabaseHost: String = getString("Database", "Host").getOrElse("")
+
+  def getDatabaseUsername: String =
+    getString("Database", "Username").getOrElse("")
+
+  def getDatabasePassword: String =
+    getString("Database", "Password").getOrElse("")
+
+  def getDatabasePort: Int = getInt("Database", "Port").getOrElse(0)
+
+  def getDatabaseName: String =
+    getString("Database", "DatabaseName").getOrElse("")
 }

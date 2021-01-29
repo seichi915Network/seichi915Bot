@@ -31,7 +31,8 @@ object Seichi915Bot {
       return
     }
     val commands = Seq[Command](
-      new PingCommand
+      new PingCommand,
+      new Seichi915AccountCommand
     )
     val listeners = Seq[ListenerAdapter](
       new GuildMemberJoinListener,

@@ -13,7 +13,10 @@ resolvers ++= Seq(
 libraryDependencies ++= Seq(
   "net.dv8tion" % "JDA" % "4.1.1_101",
   "com.jagrosh" % "jda-utilities" % "3.0.1",
-  "org.yaml" % "snakeyaml" % "1.21"
+  "org.yaml" % "snakeyaml" % "1.21",
+  "org.scalikejdbc" %% "scalikejdbc" % "3.5.0",
+  "mysql" % "mysql-connector-java" % "8.0.11",
+  "ch.qos.logback" % "logback-classic" % "1.2.3"
 )
 
 assemblyMergeStrategy in assembly := {
