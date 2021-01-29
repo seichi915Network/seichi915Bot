@@ -1,6 +1,5 @@
 Token: ""
 ChannelId:
-  WelcomeMessageChannel: 0
   WelcomeChannel: 0
   RoleBotChannel: 0
 RoleId:

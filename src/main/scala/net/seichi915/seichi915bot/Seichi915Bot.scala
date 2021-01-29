@@ -35,7 +35,6 @@ object Seichi915Bot {
       new Seichi915AccountCommand
     )
     val listeners = Seq[ListenerAdapter](
-      new GuildMemberJoinListener,
       new GuildMessageReactionAddListener,
       new GuildMessageReactionRemoveListener
     )

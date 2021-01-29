@@ -104,9 +104,6 @@ object Configuration {
 
   def getToken: String = getString("Token").getOrElse("")
 
-  def getWelcomeMessageChannelId: Long =
-    getLong("ChannelId", "WelcomeMessageChannel").getOrElse(0)
-
   def getWelcomeChannelId: Long =
     getLong("ChannelId", "WelcomeChannel").getOrElse(0)
 
