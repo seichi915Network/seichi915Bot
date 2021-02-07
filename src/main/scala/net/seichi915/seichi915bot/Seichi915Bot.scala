@@ -40,7 +40,7 @@ object Seichi915Bot {
     )
     val commandClient = new CommandClientBuilder()
       .setOwnerId("566817854616240128")
-      .setPrefix("/")
+      .setPrefix("$")
       .setStatus(OnlineStatus.ONLINE)
       .addCommands(commands: _*)
       .setActivity(null)
