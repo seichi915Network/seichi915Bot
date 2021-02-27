@@ -35,10 +35,10 @@ class Seichi915AccountCommand extends Command {
           event.getAuthor
             .openPrivateChannel()
             .flatMap(_.sendMessage(
-              s"次のURLにアクセスしてください: \nhttps://form.seichi915.net/discord/?id=$id"))
+              s"次のURLにアクセスしてください: \nhttps://form.seichi915.net/discord/$id/"))
             .queue()
         } else {
-          (0 to 256).foreach { _ =>
+          (0 to 128).foreach { _ =>
             id += symbolList(Random.nextInt(symbolList.size))
           }
           Database.setId(event.getAuthor.getIdLong, id) onComplete {
@@ -51,7 +51,7 @@ class Seichi915AccountCommand extends Command {
               event.getAuthor
                 .openPrivateChannel()
                 .flatMap(_.sendMessage(
-                  s"次のURLにアクセスしてください: \nhttps://form.seichi915.net/discord/?id=$id"))
+                  s"次のURLにアクセスしてください: \nhttps://form.seichi915.net/discord/$id/"))
                 .queue()
             case Failure(exception) =>
               Seichi915Bot.getLogger.log(Level.SEVERE,
