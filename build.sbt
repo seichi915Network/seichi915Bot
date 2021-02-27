@@ -1,5 +1,5 @@
 ThisBuild / scalaVersion := "2.13.4"
-ThisBuild / version := "1.1.1"
+ThisBuild / version := "1.1.2"
 ThisBuild / description := "seichi915DiscordにいるDiscordBot"
 
 resolvers ++= Seq(
